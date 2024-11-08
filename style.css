@@ -1,0 +1,238 @@
+:root {
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  padding: 20px;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+.demo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.demo__progress-section,
+.demo__controls {
+  height: 50%;
+  min-height: 205px;
+}
+
+.demo__progress-section {
+  padding-top: 5px;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.progress-section__progress-container {
+  margin: 0 auto;
+}
+
+.title {
+  margin: 0;
+  font-size: inherit;
+}
+
+.demo__controls {
+  padding-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.controls {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.controls-value::-webkit-outer-spin-button,
+.controls-value::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.controls-value,
+.controls-value:hover,
+.controls-value:focus {
+  appearance: none;
+  -moz-appearance: textfield;
+}
+
+.controls-value {
+  padding: 0;
+  width: 45px;
+  height: 30px;
+  border: 1px solid #000000;
+  border-radius: 15px;
+  text-align: center;
+  margin-right: 20px;
+}
+
+label {
+  cursor: pointer;
+}
+
+.checkbox {
+  display: inline-flex;
+}
+
+.checkbox__input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+.checkbox__text {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  position: relative;
+}
+
+.checkbox__text::before {
+  display: block;
+  content: "";
+  width: 45px;
+  height: 30px;
+  background-color: #d9def5;
+  border-radius: 15px;
+}
+
+.checkbox__text::after {
+  position: absolute;
+  left: 3px;
+  transition: left 0.3s;
+
+  display: block;
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+
+.checkbox__input:checked ~ .checkbox__text::before {
+  background-color: #2d52ff;
+}
+
+.checkbox__input:checked ~ .checkbox__text::after {
+  left: 22px;
+}
+
+@media (orientation: portrait) and (min-width: 540px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .demo {
+    max-width: 500px;
+  }
+}
+
+@media (orientation: portrait) and (min-height: 700px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .demo {
+    max-height: 660px;
+  }
+}
+
+@media (orientation: landscape) {
+  .demo {
+    flex-direction: row;
+  }
+
+  .demo__progress-section,
+  .demo__controls {
+    width: 50%;
+    min-width: 200px;
+    height: 100%;
+    min-height: 160px;
+  }
+
+  .demo__progress-section {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 5px;
+    flex-direction: row;
+  }
+
+  .progress-section__title {
+    padding-top: 5px;
+  }
+
+  .progress-section__progress-container {
+    margin: 0;
+    align-self: center;
+  }
+
+  .demo__controls {
+    padding-top: 0;
+    padding-left: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 460px) {
+  .demo__progress-section {
+    padding-right: 40px;
+  }
+
+  .demo__controls {
+    padding-left: 40px;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 790px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .demo {
+    max-width: 750px;
+  }
+}
+
+@media (orientation: landscape) and (min-height: 500px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .demo {
+    max-height: 500px;
+  }
+}

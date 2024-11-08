@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./static/favicon.ico" />
+
+    <title>Progress demo</title>
+
+    <link rel="stylesheet" href="./progress/style.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="demo">
+      <section class="demo__progress-section">
+        <h1 class="progress-section__title title">Progress</h1>
+
+        <div class="progress-section__progress-container"></div>
+      </section>
+
+      <div class="demo__controls">
+        <div class="controls">
+          <label>
+            <input
+              class="controls-value"
+              type="number"
+              id="value"
+              min="0"
+              max="100"
+              value="0"
+            />Value
+          </label>
+
+          <label class="checkbox"
+            ><input class="checkbox__input" type="checkbox" id="animate" /><span
+              class="checkbox__text"
+              >Animate</span
+            ></label
+          >
+
+          <label class="checkbox"
+            ><input class="checkbox__input" type="checkbox" id="hide" /><span
+              class="checkbox__text"
+              >Hide</span
+            ></label
+          >
+        </div>
+      </div>
+    </main>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>

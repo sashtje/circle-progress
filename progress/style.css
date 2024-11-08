@@ -1,0 +1,32 @@
+.progress-circle {
+  display: block;
+  transform: rotate(-90deg);
+}
+
+.progress-circle__background {
+  fill: none;
+  stroke: #dedede;
+  stroke-width: 10;
+}
+
+.progress-circle__progress {
+  fill: none;
+  stroke: #2d52ff;
+  stroke-width: 10;
+  transform-origin: center;
+  transition: stroke-dashoffset 0.3s;
+}
+
+.progress-circle.animated .progress-circle__progress {
+  transform-origin: center;
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
